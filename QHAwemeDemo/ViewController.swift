@@ -41,6 +41,17 @@ class ViewController: QHTabBarController {
             addChildVCWithStoryboardName(tabBar: value)
         }
         self.tabBarView.reloadData()
+        self.selectIndexView(index: 1)
+        p_setTabBarViewColor()
+    }
+    
+    func p_setTabBarViewColor() {
+        if self.selectedIndex == 0 {
+            self.tabBarView.backgroundColor = UIColor.clear
+        }
+        else {
+            self.tabBarView.backgroundColor = UIColor.black
+        }
     }
     
     //MARK: QHTabBarDataSource
@@ -49,10 +60,26 @@ class ViewController: QHTabBarController {
         return dataArray
     }
     
+    override func tabBarViewForMiddle(_ tabBarView: QHTabBarView, size: CGSize) -> UIView? {
+        let wd = 15 as CGFloat
+        let hd = 10 as CGFloat
+        let w = CGFloat(size.width) - wd * CGFloat(2)
+        let h = CGFloat(size.height) - hd * CGFloat(2)
+        let middleBtn = UIButton(frame: CGRect(x: wd, y: hd, width: w, height:h))
+        middleBtn.setTitle("+", for: .normal)
+        middleBtn.setTitleColor(UIColor.black, for: .normal)
+        middleBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        middleBtn.backgroundColor = UIColor.white
+        middleBtn.layer.cornerRadius = 3
+        
+        return middleBtn
+    }
+    
     //MARK: QHTabBarDelegate
     
     override func tabBarView(_ tabBarView: QHTabBarView, didSelectRowAt index: Int) {
         super.tabBarView(tabBarView, didSelectRowAt: index)
+        p_setTabBarViewColor()
     }
 }
 

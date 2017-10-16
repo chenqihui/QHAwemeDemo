@@ -58,6 +58,11 @@ class QHTabBarController: UITabBarController, QHTabBarDataSource, QHTabBarDelega
         }
     }
     
+    func selectIndexView(index: Int) {
+        self.selectedIndex = index - 1
+        self.tabBarView.selectTabBar(index: index)
+    }
+    
     //MARK: Util
     
     func createImageWithColor(color: UIColor) -> UIImage {
@@ -77,6 +82,10 @@ class QHTabBarController: UITabBarController, QHTabBarDataSource, QHTabBarDelega
     
     func tabBarViewForRows(_ tabBarView: QHTabBarView) -> [QHTabBar] {
         return [QHTabBar()]
+    }
+    
+    func tabBarViewForMiddle(_ tabBarView: QHTabBarView, size: CGSize) -> UIView? {
+        return nil
     }
     
     //MARK: QHTabBarDelegate
