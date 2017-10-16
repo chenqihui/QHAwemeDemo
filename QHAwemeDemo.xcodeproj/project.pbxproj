@@ -12,6 +12,17 @@
 		74A5833F1F93648D0073E5D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A5833D1F93648D0073E5D9 /* Main.storyboard */; };
 		74A583411F93648D0073E5D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A583401F93648D0073E5D9 /* Assets.xcassets */; };
 		74A583441F93648D0073E5D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A583421F93648D0073E5D9 /* LaunchScreen.storyboard */; };
+		74A5834F1F9375AF0073E5D9 /* QHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5834E1F9375AF0073E5D9 /* QHTabBarController.swift */; };
+		74A583511F93C7390073E5D9 /* QHTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A583501F93C7390073E5D9 /* QHTabBarView.swift */; };
+		74A583581F945F100073E5D9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A583571F945F100073E5D9 /* Home.storyboard */; };
+		74A5835B1F945F490073E5D9 /* QHBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5835A1F945F490073E5D9 /* QHBaseViewController.swift */; };
+		74A5835D1F945F790073E5D9 /* QHHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5835C1F945F790073E5D9 /* QHHomeViewController.swift */; };
+		74A5835F1F945FA60073E5D9 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A5835E1F945FA60073E5D9 /* Find.storyboard */; };
+		74A583611F945FB20073E5D9 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A583601F945FB20073E5D9 /* Message.storyboard */; };
+		74A583631F945FBD0073E5D9 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A583621F945FBD0073E5D9 /* Mine.storyboard */; };
+		74A583651F9460000073E5D9 /* QHFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A583641F9460000073E5D9 /* QHFindViewController.swift */; };
+		74A583671F94601D0073E5D9 /* QHMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A583661F94601D0073E5D9 /* QHMessageViewController.swift */; };
+		74A583691F94602B0073E5D9 /* QHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A583681F94602B0073E5D9 /* QHMineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +33,20 @@
 		74A583401F93648D0073E5D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74A583431F93648D0073E5D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74A583451F93648D0073E5D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74A5834E1F9375AF0073E5D9 /* QHTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHTabBarController.swift; sourceTree = "<group>"; };
+		74A583501F93C7390073E5D9 /* QHTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHTabBarView.swift; sourceTree = "<group>"; };
+		74A583571F945F100073E5D9 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		74A5835A1F945F490073E5D9 /* QHBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHBaseViewController.swift; sourceTree = "<group>"; };
+		74A5835C1F945F790073E5D9 /* QHHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHHomeViewController.swift; sourceTree = "<group>"; };
+		74A5835E1F945FA60073E5D9 /* Find.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Find.storyboard; sourceTree = "<group>"; };
+		74A583601F945FB20073E5D9 /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		74A583621F945FBD0073E5D9 /* Mine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
+		74A583641F9460000073E5D9 /* QHFindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHFindViewController.swift; sourceTree = "<group>"; };
+		74A583661F94601D0073E5D9 /* QHMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHMessageViewController.swift; sourceTree = "<group>"; };
+		74A583681F94602B0073E5D9 /* QHMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHMineViewController.swift; sourceTree = "<group>"; };
+		74A5836B1F9460F10073E5D9 /* QHNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHNavigationBar.swift; sourceTree = "<group>"; };
+		74A5836C1F9460F10073E5D9 /* QHNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QHNavigationBar.xib; sourceTree = "<group>"; };
+		74A5836D1F9460F10073E5D9 /* QHNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +79,9 @@
 		74A583381F93648D0073E5D9 /* QHAwemeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				74A583591F945F230073E5D9 /* Base */,
+				74A5834C1F9367EF0073E5D9 /* Modules */,
+				74A583521F945CC60073E5D9 /* ViewController */,
 				74A583391F93648D0073E5D9 /* AppDelegate.swift */,
 				74A5833B1F93648D0073E5D9 /* ViewController.swift */,
 				74A5833D1F93648D0073E5D9 /* Main.storyboard */,
@@ -62,6 +90,89 @@
 				74A583451F93648D0073E5D9 /* Info.plist */,
 			);
 			path = QHAwemeDemo;
+			sourceTree = "<group>";
+		};
+		74A5834C1F9367EF0073E5D9 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				74A5836A1F9460F10073E5D9 /* QHNavigationControllerMan */,
+				74A5834D1F93742F0073E5D9 /* QHTabBarMan */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		74A5834D1F93742F0073E5D9 /* QHTabBarMan */ = {
+			isa = PBXGroup;
+			children = (
+				74A5834E1F9375AF0073E5D9 /* QHTabBarController.swift */,
+				74A583501F93C7390073E5D9 /* QHTabBarView.swift */,
+			);
+			path = QHTabBarMan;
+			sourceTree = "<group>";
+		};
+		74A583521F945CC60073E5D9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				74A583531F945CE60073E5D9 /* Home */,
+				74A583561F945D270073E5D9 /* Find */,
+				74A583551F945D1E0073E5D9 /* Message */,
+				74A583541F945CF10073E5D9 /* Mine */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		74A583531F945CE60073E5D9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				74A583571F945F100073E5D9 /* Home.storyboard */,
+				74A5835C1F945F790073E5D9 /* QHHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		74A583541F945CF10073E5D9 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				74A583621F945FBD0073E5D9 /* Mine.storyboard */,
+				74A583681F94602B0073E5D9 /* QHMineViewController.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		74A583551F945D1E0073E5D9 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				74A583601F945FB20073E5D9 /* Message.storyboard */,
+				74A583661F94601D0073E5D9 /* QHMessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		74A583561F945D270073E5D9 /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				74A5835E1F945FA60073E5D9 /* Find.storyboard */,
+				74A583641F9460000073E5D9 /* QHFindViewController.swift */,
+			);
+			path = Find;
+			sourceTree = "<group>";
+		};
+		74A583591F945F230073E5D9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				74A5835A1F945F490073E5D9 /* QHBaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		74A5836A1F9460F10073E5D9 /* QHNavigationControllerMan */ = {
+			isa = PBXGroup;
+			children = (
+				74A5836B1F9460F10073E5D9 /* QHNavigationBar.swift */,
+				74A5836C1F9460F10073E5D9 /* QHNavigationBar.xib */,
+				74A5836D1F9460F10073E5D9 /* QHNavigationController.swift */,
+			);
+			path = QHNavigationControllerMan;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +235,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A583441F93648D0073E5D9 /* LaunchScreen.storyboard in Resources */,
+				74A5835F1F945FA60073E5D9 /* Find.storyboard in Resources */,
 				74A583411F93648D0073E5D9 /* Assets.xcassets in Resources */,
 				74A5833F1F93648D0073E5D9 /* Main.storyboard in Resources */,
+				74A583631F945FBD0073E5D9 /* Mine.storyboard in Resources */,
+				74A583611F945FB20073E5D9 /* Message.storyboard in Resources */,
+				74A583581F945F100073E5D9 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +252,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A5833C1F93648D0073E5D9 /* ViewController.swift in Sources */,
+				74A583511F93C7390073E5D9 /* QHTabBarView.swift in Sources */,
+				74A583691F94602B0073E5D9 /* QHMineViewController.swift in Sources */,
+				74A5834F1F9375AF0073E5D9 /* QHTabBarController.swift in Sources */,
 				74A5833A1F93648D0073E5D9 /* AppDelegate.swift in Sources */,
+				74A583651F9460000073E5D9 /* QHFindViewController.swift in Sources */,
+				74A583671F94601D0073E5D9 /* QHMessageViewController.swift in Sources */,
+				74A5835D1F945F790073E5D9 /* QHHomeViewController.swift in Sources */,
+				74A5835B1F945F490073E5D9 /* QHBaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
