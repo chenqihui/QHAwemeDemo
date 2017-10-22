@@ -26,7 +26,7 @@ public class QHTabBarView: UIView {
     
     var superView: UIView?
     
-    var selectIndex: Int = 0
+    var selectIndex: Int = 0//从1开始
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -120,7 +120,7 @@ public class QHTabBarView: UIView {
     @objc func selectAction(sender: UIButton) {
         if let del = self.delegate {
 //            if del.responds(to: #selector(del.tabBarView(_:didSelectRowAt:))) {
-                del.tabBarView(self, didSelectRowAt: sender.tag)
+                del.tabBarView(self, didSelectRowAt: (sender.tag - 1))
 //            }
             
             selectTabBar(index: sender.tag)

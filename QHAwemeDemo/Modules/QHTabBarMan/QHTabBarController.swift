@@ -91,7 +91,7 @@ class QHTabBarController: UITabBarController, QHTabBarDataSource, QHTabBarDelega
     //MARK: QHTabBarDelegate
     
     func tabBarView(_ tabBarView: QHTabBarView, didSelectRowAt index: Int) {
-        self.selectedIndex = index - 1
+        self.selectedIndex = index
     }
 
 }

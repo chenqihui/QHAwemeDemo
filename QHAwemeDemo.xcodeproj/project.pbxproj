@@ -23,6 +23,7 @@
 		74A583651F9460000073E5D9 /* QHFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A583641F9460000073E5D9 /* QHFindViewController.swift */; };
 		74A583671F94601D0073E5D9 /* QHMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A583661F94601D0073E5D9 /* QHMessageViewController.swift */; };
 		74A583691F94602B0073E5D9 /* QHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A583681F94602B0073E5D9 /* QHMineViewController.swift */; };
+		74DE6F371F9CDA980061D47E /* QHHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE6F361F9CDA980061D47E /* QHHomeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		74A5836B1F9460F10073E5D9 /* QHNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHNavigationBar.swift; sourceTree = "<group>"; };
 		74A5836C1F9460F10073E5D9 /* QHNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QHNavigationBar.xib; sourceTree = "<group>"; };
 		74A5836D1F9460F10073E5D9 /* QHNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHNavigationController.swift; sourceTree = "<group>"; };
+		74DE6F361F9CDA980061D47E /* QHHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				74A583571F945F100073E5D9 /* Home.storyboard */,
 				74A5835C1F945F790073E5D9 /* QHHomeViewController.swift */,
+				74DE6F361F9CDA980061D47E /* QHHomeCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			files = (
 				74A5833C1F93648D0073E5D9 /* ViewController.swift in Sources */,
 				74A583511F93C7390073E5D9 /* QHTabBarView.swift in Sources */,
+				74DE6F371F9CDA980061D47E /* QHHomeCollectionViewCell.swift in Sources */,
 				74A583691F94602B0073E5D9 /* QHMineViewController.swift in Sources */,
 				74A5834F1F9375AF0073E5D9 /* QHTabBarController.swift in Sources */,
 				74A5833A1F93648D0073E5D9 /* AppDelegate.swift in Sources */,

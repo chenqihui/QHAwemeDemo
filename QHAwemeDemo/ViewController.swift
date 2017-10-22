@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: QHTabBarController {
+    
     var dataArray: [QHTabBar] = []
 
     override func viewDidLoad() {
@@ -78,8 +79,29 @@ class ViewController: QHTabBarController {
     //MARK: QHTabBarDelegate
     
     override func tabBarView(_ tabBarView: QHTabBarView, didSelectRowAt index: Int) {
-        super.tabBarView(tabBarView, didSelectRowAt: index)
-        p_setTabBarViewColor()
+        if self.selectedIndex == index {
+            let vc = self.childViewControllers[selectedIndex]
+            switch selectedIndex {
+            case 0: do {
+                let v: QHHomeViewController = vc as! QHHomeViewController
+                v.mainCV.reloadData()
+                v.mainCV.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+            }
+                break
+            case 1:
+                break
+            case 2:
+                break
+            case 3:
+                break
+            default:
+                break
+            }
+        }
+        else {
+            self.selectedIndex = index
+            p_setTabBarViewColor()
+        }
     }
 }
 
