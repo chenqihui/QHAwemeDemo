@@ -8,11 +8,13 @@
 
 import UIKit
 
-class QHHomeViewController: QHBaseViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class QHHomeViewController: QHBaseViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIGestureRecognizerDelegate, QHHomeCollectionViewCellDelegate {
     
     let homeCellIdentifier = "QHHomeCellIdentifier"
     
     var homeArray = [1, 2, 3, 4, 5, 6, 7, 8, 9,10]
+    
+    var detailVC: QHDetailsViewController? = QHDetailsViewController()
     
     @IBOutlet weak var mainCV: UICollectionView!
     
@@ -38,11 +40,25 @@ class QHHomeViewController: QHBaseViewController, UICollectionViewDelegateFlowLa
         } else {
             self.automaticallyAdjustsScrollViewInsets = false
         }
+        
+        p_setup()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: Private
+    
+    func p_setup() {
+        p_addGesture()
+    }
+    
+    func p_addGesture() {
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(QHHomeViewController.panAction(_:)))
+        pan.delegate = self
+        self.view.addGestureRecognizer(pan)
     }
     
     //MARK: UICollectionViewDataSource
@@ -55,6 +71,7 @@ class QHHomeViewController: QHBaseViewController, UICollectionViewDelegateFlowLa
         let cell : QHHomeCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: homeCellIdentifier, for: indexPath) as! QHHomeCollectionViewCell
         cell.backgroundColor = UIColor.randomColor
         cell.titleL.text = "\(indexPath.row)"
+        cell.delegate = self
         
         return cell
     }
@@ -67,6 +84,21 @@ class QHHomeViewController: QHBaseViewController, UICollectionViewDelegateFlowLa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+    }
+    
+    //MARK: UIGestureRecognizerDelegate
+    
+    //MARK: QHHomeCollectionViewCellDelegate
+    
+    func showDetails(_ view: QHHomeCollectionViewCell) {
+        let detailsVC = QHDetailsViewController()
+        self.navigationController?.pushViewController(detailsVC, animated: true)
+    }
+    
+    //MARK: Action
+    
+    @objc func panAction(_ sender: UIPanGestureRecognizer) {
+        print("\(sender)")
     }
 }
 

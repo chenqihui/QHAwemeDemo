@@ -1,9 +1,9 @@
 //
 //  QHNavigationController.swift
-//  SHQFLiveScreenStreamAssistant
+//  QHAwemeDemo
 //
-//  Created by Anakin chen on 2017/6/18.
-//  Copyright © 2017年 Qianjun Network Technology. All rights reserved.
+//  Created by Anakin chen on 2017/10/23.
+//  Copyright © 2017年 AnakinChen Network Technology. All rights reserved.
 //
 
 import UIKit
@@ -18,7 +18,7 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
         self.interactivePopGestureRecognizer?.delegate = self as UIGestureRecognizerDelegate;
         self.delegate = self;
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

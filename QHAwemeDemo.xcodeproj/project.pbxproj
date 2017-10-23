@@ -24,6 +24,9 @@
 		74A583671F94601D0073E5D9 /* QHMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A583661F94601D0073E5D9 /* QHMessageViewController.swift */; };
 		74A583691F94602B0073E5D9 /* QHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A583681F94602B0073E5D9 /* QHMineViewController.swift */; };
 		74DE6F371F9CDA980061D47E /* QHHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE6F361F9CDA980061D47E /* QHHomeCollectionViewCell.swift */; };
+		74DE6F3B1F9CF0B90061D47E /* QHDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE6F391F9CF0B90061D47E /* QHDetailsViewController.swift */; };
+		74DE6F3C1F9CF0B90061D47E /* QHDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74DE6F3A1F9CF0B90061D47E /* QHDetailsViewController.xib */; };
+		74DE6F411F9DC2E40061D47E /* QHNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE6F401F9DC2E40061D47E /* QHNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +50,10 @@
 		74A583681F94602B0073E5D9 /* QHMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHMineViewController.swift; sourceTree = "<group>"; };
 		74A5836B1F9460F10073E5D9 /* QHNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHNavigationBar.swift; sourceTree = "<group>"; };
 		74A5836C1F9460F10073E5D9 /* QHNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QHNavigationBar.xib; sourceTree = "<group>"; };
-		74A5836D1F9460F10073E5D9 /* QHNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHNavigationController.swift; sourceTree = "<group>"; };
 		74DE6F361F9CDA980061D47E /* QHHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		74DE6F391F9CF0B90061D47E /* QHDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHDetailsViewController.swift; sourceTree = "<group>"; };
+		74DE6F3A1F9CF0B90061D47E /* QHDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QHDetailsViewController.xib; sourceTree = "<group>"; };
+		74DE6F401F9DC2E40061D47E /* QHNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +134,7 @@
 				74A583571F945F100073E5D9 /* Home.storyboard */,
 				74A5835C1F945F790073E5D9 /* QHHomeViewController.swift */,
 				74DE6F361F9CDA980061D47E /* QHHomeCollectionViewCell.swift */,
+				74DE6F381F9CF05C0061D47E /* Details */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -173,9 +179,18 @@
 			children = (
 				74A5836B1F9460F10073E5D9 /* QHNavigationBar.swift */,
 				74A5836C1F9460F10073E5D9 /* QHNavigationBar.xib */,
-				74A5836D1F9460F10073E5D9 /* QHNavigationController.swift */,
+				74DE6F401F9DC2E40061D47E /* QHNavigationController.swift */,
 			);
 			path = QHNavigationControllerMan;
+			sourceTree = "<group>";
+		};
+		74DE6F381F9CF05C0061D47E /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				74DE6F391F9CF0B90061D47E /* QHDetailsViewController.swift */,
+				74DE6F3A1F9CF0B90061D47E /* QHDetailsViewController.xib */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +254,7 @@
 			files = (
 				74A583441F93648D0073E5D9 /* LaunchScreen.storyboard in Resources */,
 				74A5835F1F945FA60073E5D9 /* Find.storyboard in Resources */,
+				74DE6F3C1F9CF0B90061D47E /* QHDetailsViewController.xib in Resources */,
 				74A583411F93648D0073E5D9 /* Assets.xcassets in Resources */,
 				74A5833F1F93648D0073E5D9 /* Main.storyboard in Resources */,
 				74A583631F945FBD0073E5D9 /* Mine.storyboard in Resources */,
@@ -261,6 +277,8 @@
 				74A5834F1F9375AF0073E5D9 /* QHTabBarController.swift in Sources */,
 				74A5833A1F93648D0073E5D9 /* AppDelegate.swift in Sources */,
 				74A583651F9460000073E5D9 /* QHFindViewController.swift in Sources */,
+				74DE6F3B1F9CF0B90061D47E /* QHDetailsViewController.swift in Sources */,
+				74DE6F411F9DC2E40061D47E /* QHNavigationController.swift in Sources */,
 				74A583671F94601D0073E5D9 /* QHMessageViewController.swift in Sources */,
 				74A5835D1F945F790073E5D9 /* QHHomeViewController.swift in Sources */,
 				74A5835B1F945F490073E5D9 /* QHBaseViewController.swift in Sources */,

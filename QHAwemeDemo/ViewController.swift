@@ -22,6 +22,8 @@ class ViewController: QHTabBarController {
         self.view.backgroundColor = UIColor.clear
         
         p_setup()
+        
+        self.navigationController
     }
 
     override func didReceiveMemoryWarning() {
