@@ -10,6 +10,7 @@ import UIKit
 
 class QHHomeViewController: QHBaseViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIGestureRecognizerDelegate, QHHomeCollectionViewCellDelegate {
     
+    
     let homeCellIdentifier = "QHHomeCellIdentifier"
     
     var homeArray = [1, 2, 3, 4, 5, 6, 7, 8, 9,10]
@@ -52,13 +53,24 @@ class QHHomeViewController: QHBaseViewController, UICollectionViewDelegateFlowLa
     //MARK: Private
     
     func p_setup() {
-        p_addGesture()
+//        p_addGesture()
     }
     
     func p_addGesture() {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(QHHomeViewController.panAction(_:)))
         pan.delegate = self
         self.view.addGestureRecognizer(pan)
+    }
+    
+    private func p_showDetails() {
+        let detailsVC = QHDetailsViewController()
+        self.navigationController?.pushViewController(detailsVC, animated: true)
+    }
+    
+    //MARK: Public
+    
+    func showDetails() {
+        p_showDetails()
     }
     
     //MARK: UICollectionViewDataSource
@@ -91,8 +103,7 @@ class QHHomeViewController: QHBaseViewController, UICollectionViewDelegateFlowLa
     //MARK: QHHomeCollectionViewCellDelegate
     
     func showDetails(_ view: QHHomeCollectionViewCell) {
-        let detailsVC = QHDetailsViewController()
-        self.navigationController?.pushViewController(detailsVC, animated: true)
+        p_showDetails()
     }
     
     //MARK: Action

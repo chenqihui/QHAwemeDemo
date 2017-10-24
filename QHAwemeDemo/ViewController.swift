@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: QHTabBarController {
+class ViewController: QHTabBarController, QHNavigationControllerProtocol {
     
     var dataArray: [QHTabBar] = []
 
@@ -22,8 +22,6 @@ class ViewController: QHTabBarController {
         self.view.backgroundColor = UIColor.clear
         
         p_setup()
-        
-        self.navigationController
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,6 +101,26 @@ class ViewController: QHTabBarController {
         else {
             self.selectedIndex = index
             p_setTabBarViewColor()
+        }
+    }
+    
+    func navigationControllerDidPush(_ vc: QHNavigationController) {
+        
+        let vc = self.childViewControllers[selectedIndex]
+        switch selectedIndex {
+        case 0: do {
+            let v: QHHomeViewController = vc as! QHHomeViewController
+            v.showDetails()
+        }
+            break
+        case 1:
+            break
+        case 2:
+            break
+        case 3:
+            break
+        default:
+            break
         }
     }
 }
