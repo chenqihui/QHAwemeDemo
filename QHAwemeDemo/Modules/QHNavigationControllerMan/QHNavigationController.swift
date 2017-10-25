@@ -8,6 +8,10 @@
 
 import UIKit
 
+/*
+ 为UIViewController添加扩展，是否关闭当前pop，全局pop，当前手势push
+ */
+
 protocol QHNavigationControllerProtocol : NSObjectProtocol {
     func navigationControllerDidPush(_ vc: QHNavigationController)
 }
@@ -19,6 +23,7 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
     var edgePan: UIScreenEdgePanGestureRecognizer?
     
     var transition = QHNavigationControllerTransition()
+    var pan: UIPanGestureRecognizer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +31,14 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
         self.interactivePopGestureRecognizer?.delegate = self as UIGestureRecognizerDelegate;
         self.delegate = self;
         
-        edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(QHNavigationController.gestureDidPushed(_:)))
-        edgePan?.edges = .right
-        edgePan?.delegate = self
-        self.view.addGestureRecognizer(edgePan!)
+//        edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(QHNavigationController.gestureDidPushed(_:)))
+//        edgePan?.edges = .right
+//        edgePan?.delegate = self
+//        self.view.addGestureRecognizer(edgePan!)
+        
+        pan = UIPanGestureRecognizer(target: self, action: #selector(QHNavigationController.gestureDidPushed(_:)))
+        pan?.delegate = self
+        self.view.addGestureRecognizer(pan!)
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,12 +66,20 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
             gestureRecognizer.addTarget(transition, action: #selector(QHNavigationControllerTransition.gestureDidPushed(_:)))
             return true
         }
+        else if gestureRecognizer == pan {
+            let gesture = gestureRecognizer as! UIPanGestureRecognizer
+            let translation = gesture.velocity(in: gesture.view)
+            if translation.x < 0 {
+                gesture.addTarget(transition, action: #selector(QHNavigationControllerTransition.gestureDidPushed(_:)))
+                return true
+            }
+            return false
+        }
         return true
     }
     
     @objc func gestureDidPushed(_ gestureRecognizer: UIPanGestureRecognizer) {
         if gestureRecognizer.state == .began {
-//            let translation = gestureRecognizer.velocity(in: gestureRecognizer.view)
 
             let vc = self.topViewController
             
@@ -77,10 +94,6 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
             
             gestureRecognizer.addTarget(self, action: #selector(QHNavigationController.gestureDidPushed(_:)))
         }
-    }
-    
-    func p_addSystomPopAction(_ gestureRecognizer: UIGestureRecognizer) {
-        
     }
     
 }
