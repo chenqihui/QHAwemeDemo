@@ -60,22 +60,47 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == self.interactivePopGestureRecognizer {
-            return (self.currentShowVC == self.topViewController)
+            let bGesture = self.currentShowVC == self.topViewController
+            return bGesture
         }
         else if gestureRecognizer == edgePan {
-            gestureRecognizer.addTarget(transition, action: #selector(QHNavigationControllerTransition.gestureDidPushed(_:)))
-            return true
+            if self.topViewController is QHRootScrollViewController {
+                let vc = self.topViewController as! QHRootScrollViewController
+                vc.mainScrollV.isScrollEnabled = false
+                gestureRecognizer.addTarget(transition, action: #selector(QHNavigationControllerTransition.gestureDidPushed(_:)))
+                return true
+            }
+            return false
         }
         else if gestureRecognizer == pan {
+            //对根页面类似scrollView的处理，如果没有可以忽略
+            if self.topViewController is QHRootScrollViewController {
+                let vc = self.topViewController as! QHRootScrollViewController
+                if vc.mainScrollV.contentOffset.x < vc.mainScrollV.frame.size.width {//当root scrollview不在tabView时忽略导航push手势
+                    return false
+                }
+            }
             let gesture = gestureRecognizer as! UIPanGestureRecognizer
             let translation = gesture.velocity(in: gesture.view)
-            if translation.x < 0 {
+            //手势方向为：水平向左
+            if translation.x < 0 && abs(translation.x) > abs(translation.y) {
+                if self.topViewController is QHRootScrollViewController {
+                    let vc = self.topViewController as! QHRootScrollViewController
+                    //手势push触发前，关闭root的scrollView滑动
+                    if vc.mainScrollV.contentOffset.x == vc.mainScrollV.frame.size.width {
+                        vc.mainScrollV.isScrollEnabled = false
+                    }
+                    else {//暂时忽略其他支持的页面
+                        //TODO:修改为判断当前页面是否支持手势push
+                        return false
+                    }
+                }
                 gesture.addTarget(transition, action: #selector(QHNavigationControllerTransition.gestureDidPushed(_:)))
                 return true
             }
             return false
         }
-        return true
+        return false
     }
     
     @objc func gestureDidPushed(_ gestureRecognizer: UIPanGestureRecognizer) {
@@ -83,15 +108,21 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
 
             let vc = self.topViewController
             
-            if vc is ViewController {
-                let v = vc as! ViewController
+            if vc is QHRootScrollViewController {
+                let v = vc as! QHRootScrollViewController
+                let vv = v.childViewControllers[1] as! QHTabBarViewController
+                
                 self.delegate = transition
-                v.navigationControllerDidPush(self)
+                vv.navigationControllerDidPush(self)
             }
         }
         else if gestureRecognizer.state == .ended || gestureRecognizer.state == .cancelled {
             self.delegate = self;
-            
+            //手势push触发后重新开启root的scrollView滑动
+            if self.viewControllers.first is QHRootScrollViewController {
+                let vc = self.viewControllers.first as! QHRootScrollViewController
+                vc.mainScrollV.isScrollEnabled = true
+            }
             gestureRecognizer.addTarget(self, action: #selector(QHNavigationController.gestureDidPushed(_:)))
         }
     }

@@ -91,7 +91,7 @@ class QHHomeViewController: QHBaseViewController, UICollectionViewDelegateFlowLa
     //MARK: UICollectionViewDelegate
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return self.view.frame.size;
+        return UIScreen.main.bounds.size;
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

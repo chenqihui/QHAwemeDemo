@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		743445231F9E150200569228 /* QHPushAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743445221F9E150200569228 /* QHPushAnimationTransition.swift */; };
+		7468424B1FA051BE00E86B09 /* QHRootScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7468424A1FA051BE00E86B09 /* QHRootScrollViewController.swift */; };
+		7468424F1FA0548100E86B09 /* QHLeftRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7468424E1FA0548100E86B09 /* QHLeftRootViewController.swift */; };
+		746842511FA054AA00E86B09 /* QHTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746842501FA054AA00E86B09 /* QHTabBarViewController.swift */; };
 		747E13801F9F0DAD00F65590 /* QHNavigationControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747E137F1F9F0DAD00F65590 /* QHNavigationControllerTransition.swift */; };
 		74A5833A1F93648D0073E5D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A583391F93648D0073E5D9 /* AppDelegate.swift */; };
 		74A5833C1F93648D0073E5D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5833B1F93648D0073E5D9 /* ViewController.swift */; };
@@ -29,10 +32,16 @@
 		74DE6F3B1F9CF0B90061D47E /* QHDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE6F391F9CF0B90061D47E /* QHDetailsViewController.swift */; };
 		74DE6F3C1F9CF0B90061D47E /* QHDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74DE6F3A1F9CF0B90061D47E /* QHDetailsViewController.xib */; };
 		74DE6F411F9DC2E40061D47E /* QHNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE6F401F9DC2E40061D47E /* QHNavigationController.swift */; };
+		74F420F31FA5113C00D7671D /* QHPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F420F11FA5113C00D7671D /* QHPlayViewController.swift */; };
+		74F420F41FA5113C00D7671D /* QHPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F420F21FA5113C00D7671D /* QHPlayViewController.xib */; };
+		74F420F71FA5127000D7671D /* QHNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F420F51FA5127000D7671D /* QHNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		743445221F9E150200569228 /* QHPushAnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHPushAnimationTransition.swift; sourceTree = "<group>"; };
+		7468424A1FA051BE00E86B09 /* QHRootScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHRootScrollViewController.swift; sourceTree = "<group>"; };
+		7468424E1FA0548100E86B09 /* QHLeftRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHLeftRootViewController.swift; sourceTree = "<group>"; };
+		746842501FA054AA00E86B09 /* QHTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHTabBarViewController.swift; sourceTree = "<group>"; };
 		747E137F1F9F0DAD00F65590 /* QHNavigationControllerTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHNavigationControllerTransition.swift; sourceTree = "<group>"; };
 		74A583361F93648D0073E5D9 /* QHAwemeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QHAwemeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A583391F93648D0073E5D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,12 +61,14 @@
 		74A583641F9460000073E5D9 /* QHFindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHFindViewController.swift; sourceTree = "<group>"; };
 		74A583661F94601D0073E5D9 /* QHMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHMessageViewController.swift; sourceTree = "<group>"; };
 		74A583681F94602B0073E5D9 /* QHMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHMineViewController.swift; sourceTree = "<group>"; };
-		74A5836B1F9460F10073E5D9 /* QHNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHNavigationBar.swift; sourceTree = "<group>"; };
-		74A5836C1F9460F10073E5D9 /* QHNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QHNavigationBar.xib; sourceTree = "<group>"; };
 		74DE6F361F9CDA980061D47E /* QHHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		74DE6F391F9CF0B90061D47E /* QHDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHDetailsViewController.swift; sourceTree = "<group>"; };
 		74DE6F3A1F9CF0B90061D47E /* QHDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QHDetailsViewController.xib; sourceTree = "<group>"; };
 		74DE6F401F9DC2E40061D47E /* QHNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHNavigationController.swift; sourceTree = "<group>"; };
+		74F420F11FA5113C00D7671D /* QHPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHPlayViewController.swift; sourceTree = "<group>"; };
+		74F420F21FA5113C00D7671D /* QHPlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QHPlayViewController.xib; sourceTree = "<group>"; };
+		74F420F51FA5127000D7671D /* QHNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHNavigationBar.swift; sourceTree = "<group>"; };
+		74F420F61FA5127000D7671D /* QHNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QHNavigationBar.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +106,9 @@
 				74A583521F945CC60073E5D9 /* ViewController */,
 				74A583391F93648D0073E5D9 /* AppDelegate.swift */,
 				74A5833B1F93648D0073E5D9 /* ViewController.swift */,
+				7468424A1FA051BE00E86B09 /* QHRootScrollViewController.swift */,
+				7468424E1FA0548100E86B09 /* QHLeftRootViewController.swift */,
+				746842501FA054AA00E86B09 /* QHTabBarViewController.swift */,
 				74A5833D1F93648D0073E5D9 /* Main.storyboard */,
 				74A583401F93648D0073E5D9 /* Assets.xcassets */,
 				74A583421F93648D0073E5D9 /* LaunchScreen.storyboard */,
@@ -139,6 +153,7 @@
 				74A5835C1F945F790073E5D9 /* QHHomeViewController.swift */,
 				74DE6F361F9CDA980061D47E /* QHHomeCollectionViewCell.swift */,
 				74DE6F381F9CF05C0061D47E /* Details */,
+				74F420F01FA5106C00D7671D /* Play */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -181,8 +196,8 @@
 		74A5836A1F9460F10073E5D9 /* QHNavigationControllerMan */ = {
 			isa = PBXGroup;
 			children = (
-				74A5836B1F9460F10073E5D9 /* QHNavigationBar.swift */,
-				74A5836C1F9460F10073E5D9 /* QHNavigationBar.xib */,
+				74F420F51FA5127000D7671D /* QHNavigationBar.swift */,
+				74F420F61FA5127000D7671D /* QHNavigationBar.xib */,
 				74DE6F401F9DC2E40061D47E /* QHNavigationController.swift */,
 				747E137F1F9F0DAD00F65590 /* QHNavigationControllerTransition.swift */,
 				743445221F9E150200569228 /* QHPushAnimationTransition.swift */,
@@ -197,6 +212,15 @@
 				74DE6F3A1F9CF0B90061D47E /* QHDetailsViewController.xib */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		74F420F01FA5106C00D7671D /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				74F420F11FA5113C00D7671D /* QHPlayViewController.swift */,
+				74F420F21FA5113C00D7671D /* QHPlayViewController.xib */,
+			);
+			path = Play;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +284,7 @@
 			files = (
 				74A583441F93648D0073E5D9 /* LaunchScreen.storyboard in Resources */,
 				74A5835F1F945FA60073E5D9 /* Find.storyboard in Resources */,
+				74F420F41FA5113C00D7671D /* QHPlayViewController.xib in Resources */,
 				74DE6F3C1F9CF0B90061D47E /* QHDetailsViewController.xib in Resources */,
 				74A583411F93648D0073E5D9 /* Assets.xcassets in Resources */,
 				74A5833F1F93648D0073E5D9 /* Main.storyboard in Resources */,
@@ -276,7 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7468424F1FA0548100E86B09 /* QHLeftRootViewController.swift in Sources */,
+				74F420F31FA5113C00D7671D /* QHPlayViewController.swift in Sources */,
 				74A5833C1F93648D0073E5D9 /* ViewController.swift in Sources */,
+				74F420F71FA5127000D7671D /* QHNavigationBar.swift in Sources */,
 				74A583511F93C7390073E5D9 /* QHTabBarView.swift in Sources */,
 				74DE6F371F9CDA980061D47E /* QHHomeCollectionViewCell.swift in Sources */,
 				74A583691F94602B0073E5D9 /* QHMineViewController.swift in Sources */,
@@ -285,11 +313,13 @@
 				743445231F9E150200569228 /* QHPushAnimationTransition.swift in Sources */,
 				74A583651F9460000073E5D9 /* QHFindViewController.swift in Sources */,
 				74DE6F3B1F9CF0B90061D47E /* QHDetailsViewController.swift in Sources */,
+				7468424B1FA051BE00E86B09 /* QHRootScrollViewController.swift in Sources */,
 				74DE6F411F9DC2E40061D47E /* QHNavigationController.swift in Sources */,
 				74A583671F94601D0073E5D9 /* QHMessageViewController.swift in Sources */,
 				74A5835D1F945F790073E5D9 /* QHHomeViewController.swift in Sources */,
 				74A5835B1F945F490073E5D9 /* QHBaseViewController.swift in Sources */,
 				747E13801F9F0DAD00F65590 /* QHNavigationControllerTransition.swift in Sources */,
+				746842511FA054AA00E86B09 /* QHTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

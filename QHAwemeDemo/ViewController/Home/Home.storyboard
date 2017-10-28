@@ -4,9 +4,9 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -85,12 +85,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="d7T-XW-Sj6" firstAttribute="trailing" secondItem="yz8-jK-rBj" secondAttribute="trailing" id="EAA-tC-YkF"/>
-                            <constraint firstItem="yz8-jK-rBj" firstAttribute="top" secondItem="d7T-XW-Sj6" secondAttribute="top" constant="-20" id="MVl-XR-FGZ"/>
-                            <constraint firstItem="d7T-XW-Sj6" firstAttribute="bottom" secondItem="yz8-jK-rBj" secondAttribute="bottom" id="avT-PE-dee"/>
-                            <constraint firstItem="yz8-jK-rBj" firstAttribute="leading" secondItem="d7T-XW-Sj6" secondAttribute="leading" id="d2X-hB-SqA"/>
+                            <constraint firstAttribute="trailing" secondItem="yz8-jK-rBj" secondAttribute="trailing" id="EAA-tC-YkF"/>
+                            <constraint firstItem="yz8-jK-rBj" firstAttribute="top" secondItem="91J-dn-geZ" secondAttribute="top" id="MVl-XR-FGZ"/>
+                            <constraint firstAttribute="bottom" secondItem="yz8-jK-rBj" secondAttribute="bottom" id="avT-PE-dee"/>
+                            <constraint firstItem="yz8-jK-rBj" firstAttribute="leading" secondItem="91J-dn-geZ" secondAttribute="leading" id="d2X-hB-SqA"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="d7T-XW-Sj6"/>
                     </view>
                     <connections>
                         <outlet property="mainCV" destination="eWZ-2f-S8C" id="gVr-Cs-QJl"/>
