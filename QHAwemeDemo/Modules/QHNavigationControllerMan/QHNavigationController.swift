@@ -9,6 +9,8 @@
 import UIKit
 
 @objc protocol QHNavigationControllerProtocol : NSObjectProtocol {
+    @objc optional func navigationControllerShouldPush(_ vc: QHNavigationController) -> Bool
+    
     @objc optional func navigationControllerDidPush(_ vc: QHNavigationController)
     
     @objc optional func doNavigationControllerGesturePush(_ vc: QHNavigationController) -> Bool
@@ -26,6 +28,9 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
     var pan: UIPanGestureRecognizer?
     
     var bResetScrollEable = false
+    
+    //TODO: 暂时使用其他push动画时，禁止手势pop
+    var otherTransition: QHNavigationOtherTransition?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +53,22 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Public
+    
+    func changeTransition(_ bChange: Bool) {
+        if bChange == true {
+            if otherTransition == nil {
+                otherTransition = QHNavigationOtherTransition()
+            }
+            self.delegate = otherTransition
+        }
+        else {
+            self.delegate = self;
+        }
+    }
+    
+    //MARK: UINavigationControllerDelegate
+    
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         if navigationController.viewControllers.count == 1 {
             self.currentShowVC = nil
@@ -60,8 +81,15 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
         }
     }
     
+    //MARK: UIGestureRecognizerDelegate
+    
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == self.interactivePopGestureRecognizer {
+            if let _ = otherTransition {
+                if self.delegate is QHNavigationOtherTransition {
+                    return false
+                }
+            }
             if self.topViewController is QHNavigationControllerProtocol {
                 let v = self.topViewController as! QHNavigationControllerProtocol
                 if (v.doNavigationControllerGesturePop) != nil {
@@ -110,14 +138,26 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
                 let vc = self.topViewController
                 if vc is QHRootScrollViewController {
                     let vc = self.topViewController as! QHRootScrollViewController
+                    let vv = vc.childViewControllers[1] as! QHNavigationControllerProtocol
+                    if (vv.responds(to: #selector(QHNavigationControllerProtocol.navigationControllerShouldPush(_:)))) {
+                        bScrollBegin = vv.navigationControllerShouldPush!(self)
+                        if bScrollBegin == false {
+                            return false
+                        }
+                    }
                     //手势push触发前，关闭root的scrollView滑动
                     if vc.mainScrollV.contentOffset.x == vc.mainScrollV.frame.size.width {
                         vc.mainScrollV.isScrollEnabled = false
                         bScrollBegin = true
                     }
                 }
-                else if (vc?.responds(to: #selector(QHNavigationControllerProtocol.navigationControllerDidPush(_:))))! {
-                    bScrollBegin = true
+                else {
+                    if vc is QHNavigationControllerProtocol {
+                        if (vc?.responds(to: #selector(QHNavigationControllerProtocol.navigationControllerShouldPush(_:))))! {
+                            let v = vc as! QHNavigationControllerProtocol
+                            bScrollBegin = v.navigationControllerShouldPush!(self)
+                        }
+                    }
                 }
                 if bScrollBegin == true {
                     gesture.addTarget(transition, action: #selector(QHNavigationControllerTransition.gestureDidPushed(_:)))
@@ -127,6 +167,8 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
         }
         return false
     }
+    
+    //MARK: Action
     
     @objc func gestureDidPushed(_ gestureRecognizer: UIPanGestureRecognizer) {
         if gestureRecognizer.state == .began {

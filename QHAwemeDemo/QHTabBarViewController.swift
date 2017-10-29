@@ -78,6 +78,7 @@ class QHTabBarViewController: QHTabBarController, QHNavigationControllerProtocol
         middleBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         middleBtn.backgroundColor = UIColor.white
         middleBtn.layer.cornerRadius = 3
+        middleBtn.addTarget(self, action: #selector(self.goRecordViewAction(_:)), for: .touchUpInside)
         
         return middleBtn
     }
@@ -112,6 +113,13 @@ class QHTabBarViewController: QHTabBarController, QHNavigationControllerProtocol
     
     //MARK: QHNavigationControllerProtocol
     
+    func navigationControllerShouldPush(_ vc: QHNavigationController) -> Bool {
+        if selectedIndex == 0 {
+            return true
+        }
+        return false
+    }
+    
     func navigationControllerDidPush(_ vc: QHNavigationController) {
         let vc = self.childViewControllers[selectedIndex]
         switch selectedIndex {
@@ -130,5 +138,14 @@ class QHTabBarViewController: QHTabBarController, QHNavigationControllerProtocol
             break
         }
     }
+    
+    //MARK: Action
+    
+    @IBAction func goRecordViewAction(_ sender: Any) {
+        (self.navigationController as! QHNavigationController).changeTransition(true)
+        let vc = QHRecordViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 
 }

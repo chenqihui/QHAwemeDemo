@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		743445231F9E150200569228 /* QHPushAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743445221F9E150200569228 /* QHPushAnimationTransition.swift */; };
+		745346271FA6252800A8DA04 /* QHNavigationOtherTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745346261FA6252800A8DA04 /* QHNavigationOtherTransition.swift */; };
+		745346291FA62B9A00A8DA04 /* QHPresentPushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745346281FA62B9A00A8DA04 /* QHPresentPushTransition.swift */; };
+		7453462B1FA62BA800A8DA04 /* QHPresentPopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7453462A1FA62BA800A8DA04 /* QHPresentPopTransition.swift */; };
+		7453462F1FA63AC600A8DA04 /* QHRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7453462D1FA63AC600A8DA04 /* QHRecordViewController.swift */; };
+		745346301FA63AC600A8DA04 /* QHRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7453462E1FA63AC600A8DA04 /* QHRecordViewController.xib */; };
 		7468424B1FA051BE00E86B09 /* QHRootScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7468424A1FA051BE00E86B09 /* QHRootScrollViewController.swift */; };
 		7468424F1FA0548100E86B09 /* QHLeftRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7468424E1FA0548100E86B09 /* QHLeftRootViewController.swift */; };
 		746842511FA054AA00E86B09 /* QHTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746842501FA054AA00E86B09 /* QHTabBarViewController.swift */; };
@@ -36,10 +41,16 @@
 		74F420F31FA5113C00D7671D /* QHPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F420F11FA5113C00D7671D /* QHPlayViewController.swift */; };
 		74F420F41FA5113C00D7671D /* QHPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F420F21FA5113C00D7671D /* QHPlayViewController.xib */; };
 		74F420F71FA5127000D7671D /* QHNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F420F51FA5127000D7671D /* QHNavigationBar.swift */; };
+		74F898BC1FA6197C0091CCC9 /* QHBaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F898BB1FA6197C0091CCC9 /* QHBaseTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		743445221F9E150200569228 /* QHPushAnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHPushAnimationTransition.swift; sourceTree = "<group>"; };
+		745346261FA6252800A8DA04 /* QHNavigationOtherTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHNavigationOtherTransition.swift; sourceTree = "<group>"; };
+		745346281FA62B9A00A8DA04 /* QHPresentPushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHPresentPushTransition.swift; sourceTree = "<group>"; };
+		7453462A1FA62BA800A8DA04 /* QHPresentPopTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHPresentPopTransition.swift; sourceTree = "<group>"; };
+		7453462D1FA63AC600A8DA04 /* QHRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHRecordViewController.swift; sourceTree = "<group>"; };
+		7453462E1FA63AC600A8DA04 /* QHRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QHRecordViewController.xib; sourceTree = "<group>"; };
 		7468424A1FA051BE00E86B09 /* QHRootScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHRootScrollViewController.swift; sourceTree = "<group>"; };
 		7468424E1FA0548100E86B09 /* QHLeftRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHLeftRootViewController.swift; sourceTree = "<group>"; };
 		746842501FA054AA00E86B09 /* QHTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHTabBarViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +81,7 @@
 		74F420F21FA5113C00D7671D /* QHPlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QHPlayViewController.xib; sourceTree = "<group>"; };
 		74F420F51FA5127000D7671D /* QHNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHNavigationBar.swift; sourceTree = "<group>"; };
 		74F420F61FA5127000D7671D /* QHNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QHNavigationBar.xib; sourceTree = "<group>"; };
+		74F898BB1FA6197C0091CCC9 /* QHBaseTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHBaseTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7453462C1FA63A9D00A8DA04 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				7453462D1FA63AC600A8DA04 /* QHRecordViewController.swift */,
+				7453462E1FA63AC600A8DA04 /* QHRecordViewController.xib */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
 		74A5832D1F93648D0073E5D9 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +160,7 @@
 		74A583521F945CC60073E5D9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7453462C1FA63A9D00A8DA04 /* Record */,
 				74A583531F945CE60073E5D9 /* Home */,
 				74A583561F945D270073E5D9 /* Find */,
 				74A583551F945D1E0073E5D9 /* Message */,
@@ -197,6 +219,7 @@
 		74A5836A1F9460F10073E5D9 /* QHNavigationControllerMan */ = {
 			isa = PBXGroup;
 			children = (
+				74F898BA1FA618490091CCC9 /* OtherTransition */,
 				74F420F51FA5127000D7671D /* QHNavigationBar.swift */,
 				74F420F61FA5127000D7671D /* QHNavigationBar.xib */,
 				74DE6F401F9DC2E40061D47E /* QHNavigationController.swift */,
@@ -222,6 +245,17 @@
 				74F420F21FA5113C00D7671D /* QHPlayViewController.xib */,
 			);
 			path = Play;
+			sourceTree = "<group>";
+		};
+		74F898BA1FA618490091CCC9 /* OtherTransition */ = {
+			isa = PBXGroup;
+			children = (
+				74F898BB1FA6197C0091CCC9 /* QHBaseTransition.swift */,
+				745346261FA6252800A8DA04 /* QHNavigationOtherTransition.swift */,
+				745346281FA62B9A00A8DA04 /* QHPresentPushTransition.swift */,
+				7453462A1FA62BA800A8DA04 /* QHPresentPopTransition.swift */,
+			);
+			path = OtherTransition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				745346301FA63AC600A8DA04 /* QHRecordViewController.xib in Resources */,
 				74C07FB61FA5E52100CDD84E /* QHNavigationBar.xib in Resources */,
 				74A583441F93648D0073E5D9 /* LaunchScreen.storyboard in Resources */,
 				74A5835F1F945FA60073E5D9 /* Find.storyboard in Resources */,
@@ -305,21 +340,26 @@
 			files = (
 				7468424F1FA0548100E86B09 /* QHLeftRootViewController.swift in Sources */,
 				74F420F31FA5113C00D7671D /* QHPlayViewController.swift in Sources */,
+				745346271FA6252800A8DA04 /* QHNavigationOtherTransition.swift in Sources */,
 				74A5833C1F93648D0073E5D9 /* ViewController.swift in Sources */,
 				74F420F71FA5127000D7671D /* QHNavigationBar.swift in Sources */,
 				74A583511F93C7390073E5D9 /* QHTabBarView.swift in Sources */,
 				74DE6F371F9CDA980061D47E /* QHHomeCollectionViewCell.swift in Sources */,
 				74A583691F94602B0073E5D9 /* QHMineViewController.swift in Sources */,
 				74A5834F1F9375AF0073E5D9 /* QHTabBarController.swift in Sources */,
+				745346291FA62B9A00A8DA04 /* QHPresentPushTransition.swift in Sources */,
 				74A5833A1F93648D0073E5D9 /* AppDelegate.swift in Sources */,
 				743445231F9E150200569228 /* QHPushAnimationTransition.swift in Sources */,
 				74A583651F9460000073E5D9 /* QHFindViewController.swift in Sources */,
 				74DE6F3B1F9CF0B90061D47E /* QHDetailsViewController.swift in Sources */,
+				7453462F1FA63AC600A8DA04 /* QHRecordViewController.swift in Sources */,
+				74F898BC1FA6197C0091CCC9 /* QHBaseTransition.swift in Sources */,
 				7468424B1FA051BE00E86B09 /* QHRootScrollViewController.swift in Sources */,
 				74DE6F411F9DC2E40061D47E /* QHNavigationController.swift in Sources */,
 				74A583671F94601D0073E5D9 /* QHMessageViewController.swift in Sources */,
 				74A5835D1F945F790073E5D9 /* QHHomeViewController.swift in Sources */,
 				74A5835B1F945F490073E5D9 /* QHBaseViewController.swift in Sources */,
+				7453462B1FA62BA800A8DA04 /* QHPresentPopTransition.swift in Sources */,
 				747E13801F9F0DAD00F65590 /* QHNavigationControllerTransition.swift in Sources */,
 				746842511FA054AA00E86B09 /* QHTabBarViewController.swift in Sources */,
 			);

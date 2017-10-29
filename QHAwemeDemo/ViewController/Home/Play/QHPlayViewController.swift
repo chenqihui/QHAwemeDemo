@@ -43,6 +43,10 @@ class QHPlayViewController: QHBaseViewController, QHNavigationBarDelegate, QHNav
     
     //MARK: QHNavigationControllerProtocol
     
+    func navigationControllerShouldPush(_ vc: QHNavigationController) -> Bool {
+        return true
+    }
+    
     func navigationControllerDidPush(_ vc: QHNavigationController) {
         let vc = QHDetailsViewController()
         self.navigationController?.pushViewController(vc, animated: true)
