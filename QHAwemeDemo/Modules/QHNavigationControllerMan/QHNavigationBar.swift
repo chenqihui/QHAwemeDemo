@@ -27,7 +27,7 @@ class QHNavigationBar: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         Bundle.main.loadNibNamed("QHNavigationBar", owner: self, options: nil)
-        self.frame = self.view.frame
+//        self.frame = self.view.frame
         self.addSubview(self.view)
         p_setup()
     }
@@ -37,11 +37,5 @@ class QHNavigationBar: UIView {
 
     @IBAction func backAction(_ sender: Any) {
         delegate?.backAction()
-    }
-    
-    //Action
-    
-    func titleForNavigation(title: String) {
-        titleLabel.text = title
     }
 }

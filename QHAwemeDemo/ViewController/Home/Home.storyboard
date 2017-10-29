@@ -6,7 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,9 +44,25 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abC-no-Z7u">
-                                                            <rect key="frame" x="309" y="511" width="46" height="30"/>
-                                                            <state key="normal" title="Button"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abC-no-Z7u">
+                                                            <rect key="frame" x="305" y="491" width="50" height="50"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="64K-c1-aZW"/>
+                                                                <constraint firstAttribute="height" constant="50" id="z4s-qv-RGb"/>
+                                                            </constraints>
+                                                            <state key="normal" title="主页">
+                                                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="25"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                    <integer key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <action selector="showDetailsAction:" destination="QcI-PB-JEC" eventType="touchUpInside" id="xTb-Vz-LS2"/>
                                                             </connections>
@@ -54,14 +70,12 @@
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="abC-no-Z7u" secondAttribute="bottom" constant="100" id="0Og-uw-eiC"/>
                                                     <constraint firstAttribute="bottom" secondItem="jdB-Dm-xis" secondAttribute="bottom" id="7zT-T8-Yfk"/>
                                                     <constraint firstAttribute="trailing" secondItem="jdB-Dm-xis" secondAttribute="trailing" id="9rh-NJ-kfc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="abC-no-Z7u" secondAttribute="trailing" constant="20" id="LZY-gw-Wt7"/>
                                                     <constraint firstItem="jdB-Dm-xis" firstAttribute="top" secondItem="QcI-PB-JEC" secondAttribute="top" id="TVC-V0-bWP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="abC-no-Z7u" secondAttribute="bottom" constant="100" id="XCx-Ot-DFo"/>
                                                     <constraint firstItem="jdB-Dm-xis" firstAttribute="leading" secondItem="QcI-PB-JEC" secondAttribute="leading" id="YfT-uq-Gd4"/>
-                                                    <constraint firstAttribute="trailing" secondItem="abC-no-Z7u" secondAttribute="trailing" constant="20" id="Zrf-iG-UCN"/>
-                                                    <constraint firstAttribute="trailingMargin" secondItem="abC-no-Z7u" secondAttribute="trailing" constant="20" id="dSa-1d-lDZ"/>
-                                                    <constraint firstAttribute="bottomMargin" secondItem="abC-no-Z7u" secondAttribute="bottom" constant="100" id="fbS-O4-3ik"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="titleL" destination="jdB-Dm-xis" id="Acp-Ox-j4a"/>
@@ -90,6 +104,7 @@
                             <constraint firstAttribute="bottom" secondItem="yz8-jK-rBj" secondAttribute="bottom" id="avT-PE-dee"/>
                             <constraint firstItem="yz8-jK-rBj" firstAttribute="leading" secondItem="91J-dn-geZ" secondAttribute="leading" id="d2X-hB-SqA"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="usR-WS-WJS"/>
                     </view>
                     <connections>
                         <outlet property="mainCV" destination="eWZ-2f-S8C" id="gVr-Cs-QJl"/>

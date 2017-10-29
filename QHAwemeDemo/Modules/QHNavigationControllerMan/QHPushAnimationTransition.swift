@@ -14,6 +14,8 @@ class QHPushAnimationTransition: NSObject, UIViewControllerAnimatedTransitioning
     
     let offSetWidth: CGFloat = 0
     
+    let interlaceFactor = 0.3
+    
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return transitionDuration
     }
