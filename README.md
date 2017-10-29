@@ -17,3 +17,5 @@
 - [开发中的疑惑点---手势位置locationInView、velocityInView、translationInView](http://www.jianshu.com/p/be29e46fb2c4)
 [iOS7下滑动返回与ScrollView共存二三事](http://www.cnblogs.com/lexingyu/p/3702742.html)
 * [JPNavigationController](https://github.com/newyjp/JPNavigationController)
+* [自定义控制器的转场动画（Push、Pop）](http://www.jianshu.com/p/59224648828b)
+* [iOS动画之自定义转场动画(push)](http://www.jianshu.com/p/4d2fea0f6ecc)
