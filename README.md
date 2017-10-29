@@ -8,6 +8,7 @@
 - [x] 手势 push 
 - [x] 为单个控制器关闭 pop 手势支持
 - [x] 为所有控制器关闭 pop 手势支持
+- [x] Present 的 push 和 pop 动画
 
 
 ## 参考
