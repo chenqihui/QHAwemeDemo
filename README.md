@@ -10,6 +10,10 @@
 - [x] 为所有控制器关闭 pop 手势支持
 - [x] Present 的 push 和 pop 动画
 
+## 预览
+
+![image](https://github.com/chenqihui/QHAwemeDemo/tree/master/screenshots/QHAwemeDemoGif.gif)
+
 
 ## 参考
  
