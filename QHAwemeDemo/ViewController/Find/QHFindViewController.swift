@@ -25,6 +25,7 @@ class QHFindViewController: QHBaseViewController {
     
     @IBAction func goPlayAction(_ sender: Any) {
         let vc = QHPlayViewController()
+        vc.bEnblePush = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -14,8 +14,8 @@ public protocol QHTabBarDataSource: NSObjectProtocol {
     func tabBarViewForMiddle(_ tabBarView: QHTabBarView, size: CGSize) -> UIView?
 }
 
-public protocol QHTabBarDelegate: NSObjectProtocol {
-    func tabBarView(_ tabBarView: QHTabBarView, didSelectRowAt index: Int)
+@objc protocol QHTabBarDelegate: NSObjectProtocol {
+    @objc optional func tabBarView(_ tabBarView: QHTabBarView, didSelectRowAt index: Int)
 }
 
 public class QHTabBarView: UIView {
@@ -119,9 +119,9 @@ public class QHTabBarView: UIView {
     
     @objc func selectAction(sender: UIButton) {
         if let del = self.delegate {
-//            if del.responds(to: #selector(del.tabBarView(_:didSelectRowAt:))) {
-                del.tabBarView(self, didSelectRowAt: (sender.tag - 1))
-//            }
+            if (del.tabBarView) != nil {
+                del.tabBarView?(self, didSelectRowAt: (sender.tag - 1))
+            }
             
             selectTabBar(index: sender.tag)
         }

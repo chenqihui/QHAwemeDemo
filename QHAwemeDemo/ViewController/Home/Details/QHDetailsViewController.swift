@@ -20,5 +20,12 @@ class QHDetailsViewController: QHBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    //MARK: Action
+    
+    @IBAction func goPlayViewAction(_ sender: Any) {
+        let vc = QHPlayViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

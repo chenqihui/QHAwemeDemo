@@ -8,9 +8,11 @@
 
 import UIKit
 
-class QHPlayViewController: QHBaseViewController, QHNavigationBarDelegate {
+class QHPlayViewController: QHBaseViewController, QHNavigationBarDelegate, QHNavigationControllerProtocol {
     
     @IBOutlet weak var navigationBar: QHNavigationBar!
+    
+    var bEnblePush = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,17 @@ class QHPlayViewController: QHBaseViewController, QHNavigationBarDelegate {
     func p_setup() {
 //        navigationBar.titleLabel.text = "视频播放页"
 //        navigationBar.delegate = self
+    }
+    
+    //MARK: QHNavigationControllerProtocol
+    
+    func navigationControllerDidPush(_ vc: QHNavigationController) {
+        let vc = QHDetailsViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func doNavigationControllerGesturePush(_ vc: QHNavigationController) -> Bool {
+        return bEnblePush
     }
     
     //MARK: QHNavigationBarDelegate

@@ -47,11 +47,17 @@ class QHTabBarViewController: QHTabBarController, QHNavigationControllerProtocol
     }
     
     func p_setTabBarViewColor() {
+        var bScrollEnabled = true
         if self.selectedIndex == 0 {
             self.tabBarView.backgroundColor = UIColor.clear
         }
         else {
+            bScrollEnabled = false
             self.tabBarView.backgroundColor = UIColor.black
+        }
+        if self.navigationController?.viewControllers.first is QHRootScrollViewController {
+            let vc = self.navigationController?.viewControllers.first as! QHRootScrollViewController
+            vc.mainScrollV.isScrollEnabled = bScrollEnabled
         }
     }
     
@@ -104,8 +110,9 @@ class QHTabBarViewController: QHTabBarController, QHNavigationControllerProtocol
         }
     }
     
+    //MARK: QHNavigationControllerProtocol
+    
     func navigationControllerDidPush(_ vc: QHNavigationController) {
-        
         let vc = self.childViewControllers[selectedIndex]
         switch selectedIndex {
         case 0: do {

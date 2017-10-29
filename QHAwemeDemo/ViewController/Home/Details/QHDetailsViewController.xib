@@ -20,17 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人详情页" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTe-gv-C8L">
-                    <rect key="frame" x="144" y="323" width="87" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PB-ml-L0b">
+                    <rect key="frame" x="86" y="318" width="203" height="30"/>
+                    <state key="normal" title="进入不支持手势push的播放页"/>
+                    <connections>
+                        <action selector="goPlayViewAction:" destination="-1" eventType="touchUpInside" id="qfh-SP-b8n"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="tTe-gv-C8L" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Lh-Dv-rAQ"/>
-                <constraint firstItem="tTe-gv-C8L" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Ac2-Rc-Uff"/>
+                <constraint firstItem="3PB-ml-L0b" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="LTN-Jt-Cmv"/>
+                <constraint firstItem="3PB-ml-L0b" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vnc-UE-gcO"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="54.5"/>

@@ -63,8 +63,8 @@ class QHHomeViewController: QHBaseViewController, UICollectionViewDelegateFlowLa
     }
     
     private func p_showDetails() {
-        let detailsVC = QHDetailsViewController()
-        self.navigationController?.pushViewController(detailsVC, animated: true)
+        let vc = QHDetailsViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //MARK: Public

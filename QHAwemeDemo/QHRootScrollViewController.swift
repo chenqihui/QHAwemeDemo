@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QHRootScrollViewController: QHBaseViewController {
+class QHRootScrollViewController: QHBaseViewController, QHNavigationControllerProtocol {
     
     @IBOutlet weak var mainScrollV: UIScrollView!
     
@@ -16,10 +16,18 @@ class QHRootScrollViewController: QHBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        mainScrollV.contentOffset = CGPoint(x: UIScreen.main.bounds.width, y: 0)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: QHNavigationControllerProtocol
+    
+    func doNavigationControllerGesturePush(_ vc: QHNavigationController) -> Bool {
+        return true
     }
 }
