@@ -36,9 +36,7 @@ class QHNavigationBar: UIView {
     }
 
     @IBAction func backAction(_ sender: Any) {
-        if (delegate?.responds(to: Selector.init(("backAction"))))! {
-            delegate?.backAction()
-        }
+        delegate?.backAction()
     }
     
     //Action

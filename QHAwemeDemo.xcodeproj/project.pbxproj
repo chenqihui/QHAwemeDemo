@@ -28,6 +28,7 @@
 		74A583651F9460000073E5D9 /* QHFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A583641F9460000073E5D9 /* QHFindViewController.swift */; };
 		74A583671F94601D0073E5D9 /* QHMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A583661F94601D0073E5D9 /* QHMessageViewController.swift */; };
 		74A583691F94602B0073E5D9 /* QHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A583681F94602B0073E5D9 /* QHMineViewController.swift */; };
+		74C07FB61FA5E52100CDD84E /* QHNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F420F61FA5127000D7671D /* QHNavigationBar.xib */; };
 		74DE6F371F9CDA980061D47E /* QHHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE6F361F9CDA980061D47E /* QHHomeCollectionViewCell.swift */; };
 		74DE6F3B1F9CF0B90061D47E /* QHDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE6F391F9CF0B90061D47E /* QHDetailsViewController.swift */; };
 		74DE6F3C1F9CF0B90061D47E /* QHDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74DE6F3A1F9CF0B90061D47E /* QHDetailsViewController.xib */; };
@@ -282,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74C07FB61FA5E52100CDD84E /* QHNavigationBar.xib in Resources */,
 				74A583441F93648D0073E5D9 /* LaunchScreen.storyboard in Resources */,
 				74A5835F1F945FA60073E5D9 /* Find.storyboard in Resources */,
 				74F420F41FA5113C00D7671D /* QHPlayViewController.xib in Resources */,

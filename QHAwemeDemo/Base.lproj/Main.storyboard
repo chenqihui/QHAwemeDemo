@@ -54,7 +54,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uco-gx-IA5">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uco-gx-IA5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJX-xc-AqY" userLabel="LeftView">
@@ -120,6 +120,7 @@
                             <constraint firstItem="OJX-xc-AqY" firstAttribute="width" secondItem="SDj-wI-MIV" secondAttribute="width" id="hEd-3I-Wvn"/>
                             <constraint firstItem="SDj-wI-MIV" firstAttribute="top" secondItem="Inr-FU-9TX" secondAttribute="top" id="yQp-Wp-huU"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mls-gx-lWD"/>
                     </view>
                     <navigationItem key="navigationItem" id="CSK-0n-huk"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -139,7 +140,21 @@
                     <view key="view" contentMode="scaleToFill" id="gHo-h7-SIc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里可以广告或者录制页面" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoL-9F-l4o">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="eoL-9F-l4o" secondAttribute="bottom" id="H4G-92-271"/>
+                            <constraint firstAttribute="trailing" secondItem="eoL-9F-l4o" secondAttribute="trailing" id="vQp-5C-ibO"/>
+                            <constraint firstItem="eoL-9F-l4o" firstAttribute="top" secondItem="gHo-h7-SIc" secondAttribute="top" id="vib-83-spl"/>
+                            <constraint firstItem="eoL-9F-l4o" firstAttribute="leading" secondItem="gHo-h7-SIc" secondAttribute="leading" id="zwN-27-EZs"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRC-QI-WFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -154,6 +169,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="u6r-0U-vp7"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NT4-Yg-kxU" userLabel="First Responder" sceneMemberID="firstResponder"/>

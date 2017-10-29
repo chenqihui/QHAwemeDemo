@@ -10,9 +10,13 @@ import UIKit
 
 class QHPlayViewController: QHBaseViewController, QHNavigationBarDelegate, QHNavigationControllerProtocol {
     
-    @IBOutlet weak var navigationBar: QHNavigationBar!
+    @IBOutlet weak var naviBar: QHNavigationBar!
+    
+    @IBOutlet weak var tipTitleL: UILabel!
     
     var bEnblePush = false
+    
+    var tipTitleString: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +33,12 @@ class QHPlayViewController: QHBaseViewController, QHNavigationBarDelegate, QHNav
     //MARK: Private
     
     func p_setup() {
-//        navigationBar.titleLabel.text = "视频播放页"
-//        navigationBar.delegate = self
+        naviBar.titleLabel.text = "视频播放"
+        naviBar.delegate = self
+        
+        if let s = tipTitleString {
+            tipTitleL.text = s
+        }
     }
     
     //MARK: QHNavigationControllerProtocol
@@ -42,6 +50,10 @@ class QHPlayViewController: QHBaseViewController, QHNavigationBarDelegate, QHNav
     
     func doNavigationControllerGesturePush(_ vc: QHNavigationController) -> Bool {
         return bEnblePush
+    }
+    
+    func doNavigationControllerGesturePop(_ vc: QHNavigationController) -> Bool {
+        return true
     }
     
     //MARK: QHNavigationBarDelegate

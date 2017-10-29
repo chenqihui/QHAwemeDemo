@@ -26,6 +26,7 @@ class QHFindViewController: QHBaseViewController {
     @IBAction func goPlayAction(_ sender: Any) {
         let vc = QHPlayViewController()
         vc.bEnblePush = true
+        vc.tipTitleString = "由于不是从个人主页进入的播放页，所以可以手势push进入个人主页"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

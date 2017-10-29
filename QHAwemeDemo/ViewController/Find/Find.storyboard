@@ -19,8 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zot-O7-oZM">
-                                <rect key="frame" x="79.5" y="318.5" width="215" height="30"/>
-                                <state key="normal" title="发现里面进入某位的视频播放页"/>
+                                <rect key="frame" x="115.5" y="315.5" width="143" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="进入视频播放页"/>
                                 <connections>
                                     <action selector="goPlayAction:" destination="BqO-S8-GmA" eventType="touchUpInside" id="Hzj-id-rNq"/>
                                 </connections>

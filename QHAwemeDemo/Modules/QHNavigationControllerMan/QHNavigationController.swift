@@ -8,10 +8,6 @@
 
 import UIKit
 
-/*
- 为UIViewController添加扩展，是否关闭当前pop，全局pop，当前手势push
- */
-
 @objc protocol QHNavigationControllerProtocol : NSObjectProtocol {
     @objc optional func navigationControllerDidPush(_ vc: QHNavigationController)
     
@@ -66,6 +62,14 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == self.interactivePopGestureRecognizer {
+            if self.topViewController is QHNavigationControllerProtocol {
+                let v = self.topViewController as! QHNavigationControllerProtocol
+                if (v.doNavigationControllerGesturePop) != nil {
+                    let bEnble = v.doNavigationControllerGesturePop!(self)
+                    return bEnble
+                }
+            }
+            
             let bGesture = self.currentShowVC == self.topViewController
             return bGesture
         }
