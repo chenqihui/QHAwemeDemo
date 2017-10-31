@@ -10,9 +10,13 @@
 - [x] 为所有控制器关闭 pop 手势支持
 - [x] Present 的 push 和 pop 动画
 
+## 集成
+>pod 'QHNavigationControllerMan', '~> 0.1.1'
+
 ## 预览
 
 ![image](https://github.com/chenqihui/QHAwemeDemo/blob/master/screenshots/QHAwemeDemoGif.gif)
+
 
 ## 说明
 >手势push跟下面链接的JPNavigationController类似，不过这里的实现是添加全局手势之后，没有改变原来的pop的手势，然后通过手势回调区分是否出发对应的手势功能。相对而去不用担心替换系统pop手势的target问题。
