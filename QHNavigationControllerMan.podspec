@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "QHNavigationControllerMan"
   s.version      = "0.1.0"
-  s.summary      = "QHNavigationControllerMan 是一个添加了手势push及多种其他transition的导航控件."
+  s.summary      = "QHNavigationControllerMan 是一个实现更多功能的 UINavigationController ."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,6 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
+  QHNavigationControllerMan 添加了手势 push 、多种其他 transition 、单独控制 pop 等的导航控件
                    DESC
 
   s.homepage     = "https://github.com/chenqihui/QHAwemeDemo"
