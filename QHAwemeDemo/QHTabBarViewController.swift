@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QHTabBarViewController: QHTabBarController, QHNavigationControllerProtocol {
+class QHTabBarViewController: QHTabBarController {
     
     var dataArray: [QHTabBar] = []
     
@@ -61,6 +61,37 @@ class QHTabBarViewController: QHTabBarController, QHNavigationControllerProtocol
         }
     }
     
+    //MARK: Action
+    
+    func navigationControllerShouldPush() -> Bool {
+        if selectedIndex == 0 {
+            return true
+        }
+        return false
+    }
+    
+    func navigationControllerDidPushBegin() -> Bool {
+        var b = false
+        let vc = self.childViewControllers[selectedIndex]
+        switch selectedIndex {
+        case 0: do {
+            let v: QHHomeViewController = vc as! QHHomeViewController
+            v.showDetails()
+            b = true
+        }
+            break
+        case 1:
+            break
+        case 2:
+            break
+        case 3:
+            break
+        default:
+            break
+        }
+        return b
+    }
+    
     //MARK: QHTabBarDataSource
     
     override func tabBarViewForRows(_ tabBarView: QHTabBarView) -> [QHTabBar] {
@@ -108,34 +139,6 @@ class QHTabBarViewController: QHTabBarController, QHNavigationControllerProtocol
         else {
             self.selectedIndex = index
             p_setTabBarViewColor()
-        }
-    }
-    
-    //MARK: QHNavigationControllerProtocol
-    
-    func navigationControllerShouldPush(_ vc: QHNavigationController) -> Bool {
-        if selectedIndex == 0 {
-            return true
-        }
-        return false
-    }
-    
-    func navigationControllerDidPush(_ vc: QHNavigationController) {
-        let vc = self.childViewControllers[selectedIndex]
-        switch selectedIndex {
-        case 0: do {
-            let v: QHHomeViewController = vc as! QHHomeViewController
-            v.showDetails()
-        }
-            break
-        case 1:
-            break
-        case 2:
-            break
-        case 3:
-            break
-        default:
-            break
         }
     }
     

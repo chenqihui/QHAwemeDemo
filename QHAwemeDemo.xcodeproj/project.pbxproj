@@ -104,6 +104,15 @@
 			path = Record;
 			sourceTree = "<group>";
 		};
+		7498BDA81FA8781300DFEA2A /* QHNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				74F420F51FA5127000D7671D /* QHNavigationBar.swift */,
+				74F420F61FA5127000D7671D /* QHNavigationBar.xib */,
+			);
+			path = QHNavigationBar;
+			sourceTree = "<group>";
+		};
 		74A5832D1F93648D0073E5D9 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +151,7 @@
 		74A5834C1F9367EF0073E5D9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7498BDA81FA8781300DFEA2A /* QHNavigationBar */,
 				74A5836A1F9460F10073E5D9 /* QHNavigationControllerMan */,
 				74A5834D1F93742F0073E5D9 /* QHTabBarMan */,
 			);
@@ -220,8 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				74F898BA1FA618490091CCC9 /* OtherTransition */,
-				74F420F51FA5127000D7671D /* QHNavigationBar.swift */,
-				74F420F61FA5127000D7671D /* QHNavigationBar.xib */,
 				74DE6F401F9DC2E40061D47E /* QHNavigationController.swift */,
 				747E137F1F9F0DAD00F65590 /* QHNavigationControllerTransition.swift */,
 				743445221F9E150200569228 /* QHPushAnimationTransition.swift */,

@@ -104,13 +104,14 @@ class ViewController: QHTabBarController, QHNavigationControllerProtocol {
         }
     }
     
-    func navigationControllerDidPush(_ vc: QHNavigationController) {
-        
+    func navigationControllerDidPushBegin(_ vc: QHNavigationController) -> Bool {
+        var b = false
         let vc = self.childViewControllers[selectedIndex]
         switch selectedIndex {
         case 0: do {
             let v: QHHomeViewController = vc as! QHHomeViewController
             v.showDetails()
+            b = true
         }
             break
         case 1:
@@ -122,6 +123,11 @@ class ViewController: QHTabBarController, QHNavigationControllerProtocol {
         default:
             break
         }
+        return b
+    }
+    
+    func doNavigationControllerGesturePush(_ vc: QHNavigationController) -> Bool {
+        return true
     }
 }
 

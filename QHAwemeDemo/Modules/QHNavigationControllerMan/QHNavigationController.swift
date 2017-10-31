@@ -9,11 +9,16 @@
 import UIKit
 
 @objc protocol QHNavigationControllerProtocol : NSObjectProtocol {
+    //页面是否有push的Action
     @objc optional func navigationControllerShouldPush(_ vc: QHNavigationController) -> Bool
     
-    @objc optional func navigationControllerDidPush(_ vc: QHNavigationController)
+    //页面执行push的Action，返回true，会在End触发rootView的End回调事件（暂时为了业务需求，后期寻找优化方案）
+    @objc optional func navigationControllerDidPushBegin(_ vc: QHNavigationController) -> Bool
+    //只执行rootView
+    @objc optional func navigationControllerDidPushEnd(_ vc: QHNavigationController)
     
-    @objc optional func doNavigationControllerGesturePush(_ vc: QHNavigationController) -> Bool
+    //页面是否支持手势push
+    func doNavigationControllerGesturePush(_ vc: QHNavigationController) -> Bool
     
     @objc optional func doNavigationControllerGesturePop(_ vc: QHNavigationController) -> Bool
 }
@@ -101,62 +106,37 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
             let bGesture = self.currentShowVC == self.topViewController
             return bGesture
         }
-        else if gestureRecognizer == edgePan {
-            if self.topViewController is QHRootScrollViewController {
-                let vc = self.topViewController as! QHRootScrollViewController
-                vc.mainScrollV.isScrollEnabled = false
-                gestureRecognizer.addTarget(transition, action: #selector(QHNavigationControllerTransition.gestureDidPushed(_:)))
-                return true
-            }
-            return false
-        }
+//        else if gestureRecognizer == edgePan {
+//            if self.topViewController is QHRootScrollViewController {
+//                let vc = self.topViewController as! QHRootScrollViewController
+//                vc.mainScrollV.isScrollEnabled = false
+//                gestureRecognizer.addTarget(transition, action: #selector(QHNavigationControllerTransition.gestureDidPushed(_:)))
+//                return true
+//            }
+//            return false
+//        }
         else if gestureRecognizer == pan {
-            var bEnble = true
+            var bEnble = false
+            //判断是否打开手势push
             if self.topViewController is QHNavigationControllerProtocol {
                 let v = self.topViewController as! QHNavigationControllerProtocol
-                if (v.doNavigationControllerGesturePush) != nil {
-                    bEnble = v.doNavigationControllerGesturePush!(self)
-                }
+                bEnble = v.doNavigationControllerGesturePush(self)
             }
             if bEnble == false {
                 return false
             }
-            
-            //对根页面类似scrollView的处理，如果没有可以忽略
-            if self.topViewController is QHRootScrollViewController {
-                let vc = self.topViewController as! QHRootScrollViewController
-                if vc.mainScrollV.contentOffset.x < vc.mainScrollV.frame.size.width {//当root scrollview不在tabView时忽略导航push手势
-                    return false
-                }
-            }
-            
+            //判断条件是否满足手势push
             let gesture = gestureRecognizer as! UIPanGestureRecognizer
             let translation = gesture.velocity(in: gesture.view)
-            //手势方向为：水平向左
+            //条件：手势方向为：水平向左
             if translation.x < 0 && abs(translation.x) > abs(translation.y) {
                 var bScrollBegin = false
                 let vc = self.topViewController
-                if vc is QHRootScrollViewController {
-                    let vc = self.topViewController as! QHRootScrollViewController
-                    let vv = vc.childViewControllers[1] as! QHNavigationControllerProtocol
-                    if (vv.responds(to: #selector(QHNavigationControllerProtocol.navigationControllerShouldPush(_:)))) {
-                        bScrollBegin = vv.navigationControllerShouldPush!(self)
-                        if bScrollBegin == false {
-                            return false
-                        }
-                    }
-                    //手势push触发前，关闭root的scrollView滑动
-                    if vc.mainScrollV.contentOffset.x == vc.mainScrollV.frame.size.width {
-                        vc.mainScrollV.isScrollEnabled = false
-                        bScrollBegin = true
-                    }
-                }
-                else {
-                    if vc is QHNavigationControllerProtocol {
-                        if (vc?.responds(to: #selector(QHNavigationControllerProtocol.navigationControllerShouldPush(_:))))! {
-                            let v = vc as! QHNavigationControllerProtocol
-                            bScrollBegin = v.navigationControllerShouldPush!(self)
-                        }
+                //判断是否包含有可运行手势push的Action
+                if vc is QHNavigationControllerProtocol {
+                    if (vc?.responds(to: #selector(QHNavigationControllerProtocol.navigationControllerShouldPush(_:))))! {
+                        let v = vc as! QHNavigationControllerProtocol
+                        bScrollBegin = v.navigationControllerShouldPush!(self)
                     }
                 }
                 if bScrollBegin == true {
@@ -173,28 +153,21 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
     @objc func gestureDidPushed(_ gestureRecognizer: UIPanGestureRecognizer) {
         if gestureRecognizer.state == .began {
             let vc = self.topViewController
-            if vc is QHRootScrollViewController {
-                let v = vc as! QHRootScrollViewController
-                let vv = v.childViewControllers[1] as! QHNavigationControllerProtocol
-                self.delegate = transition
-                vv.navigationControllerDidPush!(self)
-                
-                bResetScrollEable = true
-            }
-            else if (vc?.responds(to: #selector(QHNavigationControllerProtocol.navigationControllerDidPush(_:))))! {
+            if (vc?.responds(to: #selector(QHNavigationControllerProtocol.navigationControllerDidPushBegin(_:))))! {
                 let v = vc as! QHNavigationControllerProtocol
                 self.delegate = transition
-                v.navigationControllerDidPush!(self)
-                
-                bResetScrollEable = false
+                bResetScrollEable = v.navigationControllerDidPushBegin!(self)
             }
         }
         else if gestureRecognizer.state == .ended || gestureRecognizer.state == .cancelled {
             self.delegate = self;
-            //手势push触发后重新开启root的scrollView滑动
             if bResetScrollEable == true {
-                let vc = self.viewControllers.first as! QHRootScrollViewController
-                vc.mainScrollV.isScrollEnabled = true
+                
+                let vc = self.viewControllers.first
+                if (vc?.responds(to: #selector(QHNavigationControllerProtocol.navigationControllerDidPushEnd(_:))))! {
+                    let v = vc as! QHNavigationControllerProtocol
+                    v.navigationControllerDidPushEnd!(self)
+                }
                 
                 bResetScrollEable = false
             }
