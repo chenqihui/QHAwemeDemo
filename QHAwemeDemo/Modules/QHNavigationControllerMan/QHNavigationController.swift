@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc protocol QHNavigationControllerProtocol : NSObjectProtocol {
+@objc public protocol QHNavigationControllerProtocol : NSObjectProtocol {
     //页面是否有push的Action
     @objc optional func navigationControllerShouldPush(_ vc: QHNavigationController) -> Bool
     
@@ -23,7 +23,7 @@ import UIKit
     @objc optional func doNavigationControllerGesturePop(_ vc: QHNavigationController) -> Bool
 }
 
-class QHNavigationController: UINavigationController, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
+public class QHNavigationController: UINavigationController, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     
     var currentShowVC: UIViewController?
     
@@ -37,7 +37,7 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
     //TODO: 暂时使用其他push动画时，禁止手势pop
     var otherTransition: QHNavigationOtherTransition?
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         self.interactivePopGestureRecognizer?.delegate = self as UIGestureRecognizerDelegate;
@@ -53,7 +53,7 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
         self.view.addGestureRecognizer(pan!)
     }
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -79,7 +79,7 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
     
     //MARK: Public
     
-    func changeTransition(_ bChange: Bool) {
+    public func changeTransition(_ bChange: Bool) {
         if bChange == true {
             if otherTransition == nil {
                 otherTransition = QHNavigationOtherTransition()
@@ -93,7 +93,7 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
     
     //MARK: UINavigationControllerDelegate
     
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         if navigationController.viewControllers.count == 1 {
             self.currentShowVC = nil
         }
@@ -107,7 +107,7 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
     
     //MARK: UIGestureRecognizerDelegate
     
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == self.interactivePopGestureRecognizer {
             if let _ = otherTransition {
                 if self.delegate is QHNavigationOtherTransition {
