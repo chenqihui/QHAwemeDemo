@@ -12,14 +12,18 @@ class QHNavigationOtherTransition: NSObject, UINavigationControllerDelegate {
 
     let kQHNavigationControllerTransitionBorderlineDelta = 0.3
     
+    let push = QHPresentPushTransition()
+    
+    let pop = QHPresentPopTransition()
+    
     //MARK: UINavigationControllerDelegate
     
     public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if operation == .push {
-            return QHPresentPushTransition()
+            return push
         }
         else if operation == .pop {
-            return QHPresentPopTransition()
+            return pop
         }
         return nil
     }
