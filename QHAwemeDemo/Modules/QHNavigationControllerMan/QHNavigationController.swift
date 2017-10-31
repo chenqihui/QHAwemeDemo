@@ -58,6 +58,25 @@ class QHNavigationController: UINavigationController, UINavigationControllerDele
         // Dispose of any resources that can be recreated.
     }
     
+    override open var shouldAutorotate: Bool {
+        if let b = viewControllers.last?.shouldAutorotate {
+            return b
+        }
+        return true
+    }
+    
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return (viewControllers.last?.supportedInterfaceOrientations)!
+    }
+    
+    override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return (viewControllers.last?.preferredInterfaceOrientationForPresentation)!
+    }
+    
+    override open var childViewControllerForStatusBarStyle: UIViewController? {
+        return topViewController
+    }
+    
     //MARK: Public
     
     func changeTransition(_ bChange: Bool) {
