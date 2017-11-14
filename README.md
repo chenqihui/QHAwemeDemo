@@ -13,6 +13,22 @@
 ## 集成
 >pod 'QHNavigationControllerMan', '~> 0.1.1'
 
+
+## 使用
+1.3之后使用手动添加手势push，代码如下
+```
+//AppDelegate：  
+if let navigationC = self.window?.rootViewController as? QHNavigationController {  
+	navigationC.addGesturePush()  
+}  
+//或者
+//UIViewController：
+if let navigationC = self.navigationController as? QHNavigationController {
+	navigationC.addGesturePush()
+}
+```
+1.2之前直接使用
+
 ## 预览
 
 ![image](https://github.com/chenqihui/QHAwemeDemo/blob/master/screenshots/QHAwemeDemoGif.gif)
