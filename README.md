@@ -19,12 +19,12 @@
 ```
 //AppDelegate：  
 if let navigationC = self.window?.rootViewController as? QHNavigationController {  
-	navigationC.addGesturePush()  
+    navigationC.addGesturePush()  
 }  
 //或者
 //UIViewController：
 if let navigationC = self.navigationController as? QHNavigationController {
-	navigationC.addGesturePush()
+    navigationC.addGesturePush()
 }
 ```
 1.2之前直接使用
