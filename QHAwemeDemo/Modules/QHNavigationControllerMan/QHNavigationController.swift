@@ -27,9 +27,10 @@ public class QHNavigationController: UINavigationController, UINavigationControl
     
     var currentShowVC: UIViewController?
     
-    var edgePan: UIScreenEdgePanGestureRecognizer?
+    //TODO: 暂时不采用屏幕边缘手势
+//    var edgePan: UIScreenEdgePanGestureRecognizer?
     
-    var transition = QHNavigationControllerTransition()
+    lazy var transition = QHNavigationControllerTransition()
     var pan: UIPanGestureRecognizer?
     
     var bResetScrollEable = false
@@ -42,15 +43,6 @@ public class QHNavigationController: UINavigationController, UINavigationControl
         
         self.interactivePopGestureRecognizer?.delegate = self as UIGestureRecognizerDelegate;
         self.delegate = self;
-        
-//        edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(QHNavigationController.gestureDidPushed(_:)))
-//        edgePan?.edges = .right
-//        edgePan?.delegate = self
-//        self.view.addGestureRecognizer(edgePan!)
-        
-        pan = UIPanGestureRecognizer(target: self, action: #selector(QHNavigationController.gestureDidPushed(_:)))
-        pan?.delegate = self
-        self.view.addGestureRecognizer(pan!)
     }
     
     override public func didReceiveMemoryWarning() {
@@ -78,6 +70,19 @@ public class QHNavigationController: UINavigationController, UINavigationControl
     }
     
     //MARK: Public
+    
+    public func addGesturePush() {
+//        edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(QHNavigationController.gestureDidPushed(_:)))
+//        edgePan?.edges = .right
+//        edgePan?.delegate = self
+//        self.view.addGestureRecognizer(edgePan!)
+        
+        if pan == nil {
+            pan = UIPanGestureRecognizer(target: self, action: #selector(QHNavigationController.gestureDidPushed(_:)))
+            pan?.delegate = self
+            self.view.addGestureRecognizer(pan!)
+        }
+    }
     
     public func changeTransition(_ bChange: Bool) {
         if bChange == true {

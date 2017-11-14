@@ -23,7 +23,7 @@ class QHNavigationControllerTransition: NSObject, UINavigationControllerDelegate
         }
     }
     
-    var pushAnimTransition = QHPushAnimationTransition()
+    lazy var pushAnimTransition = QHPushAnimationTransition()
     
     @objc func gestureDidPushed(_ gestureRecognizer: UIPanGestureRecognizer) {
         var progress = (gestureRecognizer.translation(in: gestureRecognizer.view)).x / (gestureRecognizer.view?.bounds.size.width)!

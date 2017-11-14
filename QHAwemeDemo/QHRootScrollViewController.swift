@@ -16,6 +16,10 @@ class QHRootScrollViewController: QHBaseViewController, QHNavigationControllerPr
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+//        if let navigationC = self.navigationController as? QHNavigationController {
+//            navigationC.addGesturePush()
+//        }
     }
 
     override func didReceiveMemoryWarning() {

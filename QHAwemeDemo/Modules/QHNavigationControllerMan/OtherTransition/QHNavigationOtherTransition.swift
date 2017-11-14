@@ -12,9 +12,9 @@ class QHNavigationOtherTransition: NSObject, UINavigationControllerDelegate {
 
     let kQHNavigationControllerTransitionBorderlineDelta = 0.3
     
-    let push = QHPresentPushTransition()
+    lazy var push = QHPresentPushTransition()
     
-    let pop = QHPresentPopTransition()
+    lazy var pop = QHPresentPopTransition()
     
     //MARK: UINavigationControllerDelegate
     
