@@ -15,7 +15,7 @@
 
 
 ## 使用
-1.3之后使用手动添加手势push，代码如下
+0.1.2使用手动添加手势push，代码如下
 ```
 //AppDelegate：  
 if let navigationC = self.window?.rootViewController as? QHNavigationController {  
@@ -27,7 +27,17 @@ if let navigationC = self.navigationController as? QHNavigationController {
     navigationC.addGesturePush()
 }
 ```
-1.2之前直接使用
+0.1.1直接使用
+
+## 注意
+>目前Demo由于首页是有左广告页，会控制root的scrollView的滑动状态，因此下面的两个回调需要bool相同，第一个是true，而后一个是false的话，就不会回调End（即第三个func），只有这种情况才有问题。
+```   
+QHNavigationControllerProtocol的实现里面
+func navigationControllerShouldPush(_ vc: QHNavigationController) -> Bool   
+func navigationControllerDidPushBegin(_ vc: QHNavigationController) -> Bool   
+func navigationControllerDidPushEnd(_ vc: QHNavigationController)   
+```
+需要说明下，这里逻辑是对的，第一其实是第二个的状态回调，就是拿bool而没有其他操作的API。
 
 ## 预览
 
