@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "QHNavigationControllerMan"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "QHNavigationControllerMan 是一个实现更多功能的 UINavigationController ."
 
   # This description is used to generate tags and improve search results.
