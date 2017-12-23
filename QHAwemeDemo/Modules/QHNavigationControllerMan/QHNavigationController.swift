@@ -195,7 +195,7 @@ public class QHNavigationController: UINavigationController, UINavigationControl
                 
                 bResetScrollEable = false
             }
-            gestureRecognizer.addTarget(self, action: #selector(QHNavigationController.gestureDidPushed(_:)))
+            gestureRecognizer.removeTarget(transition, action: #selector(QHNavigationControllerTransition.gestureDidPushed(_:)))
         }
     }
     
