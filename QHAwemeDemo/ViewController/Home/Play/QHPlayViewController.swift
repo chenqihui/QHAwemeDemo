@@ -43,6 +43,15 @@ class QHPlayViewController: QHBaseViewController, QHNavigationBarDelegate, QHNav
     
     //MARK: QHNavigationControllerProtocol
     
+    func doNavigationControllerGestureShouldPop(_ vc: QHNavigationController, receive touch: UITouch) -> Bool {
+        if let view = touch.view {
+            if view.isKind(of: UISlider.self) {
+                return false
+            }
+        }
+        return true
+    }
+    
     func navigationControllerShouldPush(_ vc: QHNavigationController) -> Bool {
         return true
     }

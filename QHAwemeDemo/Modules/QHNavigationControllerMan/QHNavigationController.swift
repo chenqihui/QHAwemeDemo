@@ -21,6 +21,9 @@ import UIKit
     func doNavigationControllerGesturePush(_ vc: QHNavigationController) -> Bool
     
     @objc optional func doNavigationControllerGesturePop(_ vc: QHNavigationController) -> Bool
+    
+    //可实现，判断 touch 接收者是否冲突，如 UISlider 等具有手势的控件，返回 false 则不触发 pop，反之触发
+    @objc optional func doNavigationControllerGestureShouldPop(_ vc: QHNavigationController, receive touch: UITouch) -> Bool
 }
 
 public class QHNavigationController: UINavigationController, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
@@ -111,6 +114,17 @@ public class QHNavigationController: UINavigationController, UINavigationControl
     }
     
     //MARK: UIGestureRecognizerDelegate
+    
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if self.topViewController is QHNavigationControllerProtocol {
+            let v = self.topViewController as! QHNavigationControllerProtocol
+            if (v.doNavigationControllerGestureShouldPop) != nil {
+                let bEnble = v.doNavigationControllerGestureShouldPop!(self, receive: touch)
+                return bEnble
+            }
+        }
+        return true
+    }
     
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == self.interactivePopGestureRecognizer {
