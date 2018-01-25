@@ -11,7 +11,7 @@
 - [x] Present 的 push 和 pop 动画
 
 ## 集成
->pod 'QHNavigationControllerMan', '~> 0.1.2'
+>pod 'QHNavigationControllerMan'
 
 
 ## 使用
