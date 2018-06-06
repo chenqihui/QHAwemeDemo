@@ -45,8 +45,8 @@ func navigationControllerDidPushEnd(_ vc: QHNavigationController)
 
 
 ## 说明
->手势push跟下面链接的JPNavigationController类似，不过这里的实现是添加全局手势之后，没有改变原来的pop的手势，然后通过手势回调区分是否出发对应的手势功能。相对而去不用担心替换系统pop手势的target问题。
-然后对于支持屏幕边缘滑动的手势push，其实也是可以，当是由于业务需求，还没增加对这部分的额外处理，所以暂时忽略，后续再补上。
+>手势push跟下面链接的```JPNavigationController```类似，不同之处在于这里实现的是添加全局手势，并没有改变原来的pop的手势，然后通过手势回调区分是否触发对应的手势功能。相对而言不用担心替换系统pop手势的target问题。
+然后对于支持屏幕边缘滑动的手势push，理论上也是可以增加，但是目前还没增加对这部分的处理，所以暂时忽略。
 
 ## 参考
  
