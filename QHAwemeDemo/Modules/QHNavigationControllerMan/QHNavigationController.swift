@@ -95,7 +95,7 @@ public class QHNavigationController: UINavigationController, UINavigationControl
             self.delegate = otherTransition
         }
         else {
-            self.delegate = self;
+            self.delegate = self
         }
     }
     

@@ -31,7 +31,7 @@ class QHRecordViewController: QHBaseViewController, QHNavigationBarDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
          super.viewDidAppear(animated)
-        (self.navigationController as? QHNavigationController)?.changeTransition(true)
+//        (self.navigationController as? QHNavigationController)?.changeTransition(true)
     }
     
     //MARK: Private
@@ -44,6 +44,7 @@ class QHRecordViewController: QHBaseViewController, QHNavigationBarDelegate {
     //MARK: QHNavigationBarDelegate
     
     func backAction() {
+        (self.navigationController as? QHNavigationController)?.changeTransition(true)
         self.navigationController?.popViewController(animated: true)
         (self.navigationController as? QHNavigationController)?.changeTransition(false)
     }
